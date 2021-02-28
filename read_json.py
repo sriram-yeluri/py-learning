@@ -15,13 +15,14 @@ def read_file_to_json(file_name):
 
 def iterate_through_json(json_data):
     for key, value in json_data.items():
-        print(key, value)
+        # print(key, value)
         if key == 'address':
-            for i in value:
-                print(f'{key}:{value[i]}')
-        if key == 'phoneNumbers':
-            for v in value:
-                print(v)
+            for items in value:
+                print(f'{key}:{value[items]}')
+        if key == 'phoneNumbers':  # iterate through list of dictionaries
+            for index in range(len(value)):
+                for items in value[index]:
+                    print(f'{items}:{value[index][items]}')
 
 
 json_data = read_file_to_json('json_example_1.json')  # None will be returned on failure

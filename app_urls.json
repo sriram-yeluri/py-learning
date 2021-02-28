@@ -1,0 +1,17 @@
+{
+  "ST": [
+    { "nxrm2": "http://192.168.2.123:8081/service/rest/v1/status"},
+    { "nxrm2+": "http://192.168.2.123:8081/service/rest/v1/status"},
+    { "nxrm3": "http://192.168.2.123:8081/service/rest/v1/status"}
+  ],
+  "ET": [
+    { "nxrm2": "http://192.168.2.123:8081/service/rest/v1/status"},
+    { "nxrm2+": "http://192.168.2.123:8081/service/rest/v1/status"},
+    { "nxrm3": "http://192.168.2.123:8081/service/rest/v1/status"}
+  ],
+  "PR": [
+    { "nxrm2": "http://192.168.2.123:8082/service/rest/v1/status"},
+    { "nxrm2+": "http://192.168.2.123:8081/service/rest/v1/status"},
+    { "nxrm3": "http://192.168.2.123:8081/service/rest/v1/status"}
+  ]
+}

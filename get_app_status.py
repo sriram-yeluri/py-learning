@@ -1,6 +1,7 @@
 import requests
 import logging
 import json
+from termcolor import colored
 
 
 def read_file_to_json(file_name):
@@ -16,19 +17,23 @@ def read_file_to_json(file_name):
 
 def get_app_status(json_data):
     print(f'-------------------------- Status Begin ------------')
-    status = 'OFF_LINE'
+    status = ''
     for key, value in json_data.items():
+        print(f'{key} ::::::::::')
         for index in range(len(value)):
             for url in value[index]:
                 # print(value[index][url])
-                print(f'{key}:{url}')
+                print(f'{url}:')
                 try:
                     resp = requests.get(value[index][url])
-                except Exception as err:
-                    print(err)
-                if resp.status_code == 200:
-                    status = 'ACTIVE'
-                print(f':{status}')
+                    if resp.status_code == 200:
+                        status = 'ACTIVE'
+                        print(colored(f'{status}', 'green'))
+                    else:
+                        status = 'OFF_LINE'
+                        print(colored(f':{status}', 'red'))
+                except requests.exceptions.RequestException as e:
+                    print('exception:', e)
 
     print(f'-------------------------- Status End ------------')
 

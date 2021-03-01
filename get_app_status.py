@@ -16,10 +16,10 @@ def read_file_to_json(file_name):
 
 
 def get_app_status(json_data):
-    print(f'-------------------------- Status Begin ------------')
+    print(f'<-------------------------- Status Begin ------------>')
     status = ''
     for key, value in json_data.items():
-        print(f'{key} ::::::::::')
+        print(f'{key} >>>>>>>>>>>>>>>>')
         for index in range(len(value)):
             for url in value[index]:
                 # print(value[index][url])
@@ -33,9 +33,9 @@ def get_app_status(json_data):
                         status = 'OFF_LINE'
                         print(colored(f':{status}', 'red'))
                 except requests.exceptions.RequestException as e:
-                    print('exception:', e)
+                    print(colored('exception:', 'red'), e)
 
-    print(f'-------------------------- Status End ------------')
+    print(f'<-------------------------- Status End ------------>')
 
 
 app_urls_json = read_file_to_json('app_urls.json')

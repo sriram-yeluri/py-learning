@@ -1,0 +1,5 @@
+
+[DEBUG] [08/28/2021 10:57:13 PM ] This message should go to the log file
+[INFO] [08/28/2021 10:57:13 PM ] So should this
+[WARNING] [08/28/2021 10:57:13 PM ] And this, too
+[ERROR] [08/28/2021 10:57:13 PM ] And non-ASCII stuff, too

@@ -16,5 +16,5 @@ obj = json.loads(data)
 print(obj['users'])
 
 # Write to json file
-with open('json_response.txt', 'w') as json_file:
+with open('../json/json_response.txt', 'w') as json_file:
     json.dump(obj, json_file, indent=4)  # Pretty Printing JSON string back
